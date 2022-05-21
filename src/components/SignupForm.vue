@@ -2,6 +2,7 @@
   <form>
     <label>Email:</label>
     <input type="email" required>
+    <p>TESTING TESTING!!!</p>
   </form>
 </template>
 
