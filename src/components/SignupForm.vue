@@ -52,19 +52,19 @@ export default {
 
   methods: {
     addSkill(e) {
-      if(e.key === ',' && this.tempSkill){
-        if(!this.skills.includes(this.tempSkill)) {
-        this.skills.push(this.tempSkill)
+      if(e.key === ',' && this.tempSkill){ //capture nana ro event kat @keyup.alt ag check kung ro tempSkill hay truthy do value
+        if(!this.skills.includes(this.tempSkill)) { //kung bkon it kaibhan sa array nga 'skills:' do gina encode nga temporary skill (tempSkill),
+        this.skills.push(this.tempSkill) //idugang do bagong tempskill
         }
-        this.tempSkill = ''
+        this.tempSkill = '' //blankohon ro tempskill dayon agod maka encode it bagong skill
       }
     },
-    deleteSkill(skill) {
-      this.skills = this.skills.filter((item) => {
-        return skill !== item
+    deleteSkill(skill) { //method para ma delete do sangka tempskill 
+      this.skills = this.skills.filter((item) => { //this.skills.filter((item) i check nana kada item sa array do skill nga ginausoy
+        return skill !== item //ifilter nana tanan nga owa it kapareho sa skill nga value ag dato ro ishow ag madelete na ro may kapareho nga skill nga gin click
       })
     },
-    handleSubmit(){
+    handleSubmit(){ //check nana ro password kung more than 5, kung more than 5 blank ro string nga ireturn, kung kueang ma prompt imaw it error
       this.passwordError = this.password.length > 5 ? '' : 'Password must be at least 6 characters long'
 
     }
