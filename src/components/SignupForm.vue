@@ -66,7 +66,9 @@ export default {
     },
     handleSubmit(){ //check nana ro password kung more than 5, kung more than 5 blank ro string nga ireturn, kung kueang ma prompt imaw it error
       this.passwordError = this.password.length > 5 ? '' : 'Password must be at least 6 characters long'
-
+      if(!this.passwordError) {
+        console.log('email:')
+      }
     }
   }
 
